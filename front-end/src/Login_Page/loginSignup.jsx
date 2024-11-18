@@ -1,12 +1,13 @@
 import { useState } from 'react';
-import { useNavigate, } from 'react-router-dom';
+import {useNavigate} from "react-router-dom";
 import './loginSignUp.css';
 
-const LoginPage = () => {
+const LoginPage = ({setUser}) => {
 
     const [isSignUp, setIsSignUp] = useState(false);
     const [error, setError] = useState('');
     const [message, setMessage] = useState('');
+    const navigate = useNavigate();
 
     const [signUpData, setSignUpData] = useState({
         name: "",
@@ -71,12 +72,11 @@ const LoginPage = () => {
            
             if(loginData.email === userName && loginData.password === password){
                 setUser(loginData.username);
-                navigate("/home");
+                window.location.href = '/home';
+                // navigate('./home')
             }else {
                 setError('نام کاربر یا گذرواژه اشتباه است');
-                setLoginData ({
-                    email
-                })
+            
             }
  // try {
 
