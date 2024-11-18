@@ -1,0 +1,32 @@
+.boxSearch{
+    margin: 20px;
+    width:98%;
+    min-height: 70vh;
+    height: max-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.searchBar{
+    width: 1000px;
+    height: 200px;
+    display: flex;
+    background-color: rgba(255, 235, 205, 0.423);
+    border-radius: 20px;
+    padding: 20px;
+    margin: 20px;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.search input{ 
+    width: 700px;
+    height: 60px;
+    border-radius: 10px;
+}
+.label{
+    font-size: 30px;
+    margin-left: 20px;
+}

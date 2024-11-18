@@ -23,20 +23,22 @@ const ForgotPassword = () => {
     };
 
     return (
-        <div className="forgot-password-container">
-            <h2>فراموشی گذرواژه</h2>
-            <form onSubmit={handleSubmit}>
-                <input
-                    type="email"
-                    placeholder="ایمیل خود را وارد کنید"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    required
-                />
-                <button type="submit">ارسال لینک بازیابی</button>
-            </form>
-            {message && <p className="message">{message}</p>}
-            {error && <p className="error">{error}</p>}
+        <div className='forgot'>
+            <div className="forgot-password-container">
+                <h2>فراموشی گذرواژه</h2>
+                    <form onSubmit={handleSubmit}>
+                        <input
+                            type="email"
+                            placeholder="ایمیل خود را وارد کنید"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            required
+                        />
+                        <button type="submit">ارسال لینک بازیابی</button>
+                    </form>
+                    {message && <p className="message">{message}</p>}
+                {error && <p className="error">{error}</p>}
+            </div>
         </div>
     );
 };

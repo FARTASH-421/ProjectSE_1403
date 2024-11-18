@@ -1,6 +1,6 @@
 import React from 'react'
 import Navbar from './Navbar'
-
+import SearchBar from "./SearchBar"
 export default function HomePage({user}) {
 
     
@@ -8,7 +8,7 @@ export default function HomePage({user}) {
   return (
     <div>
         <Navbar user={user}/>
-        {/* <a href='./login'>Log in</a> */}
+        <SearchBar/>
 
     </div>
   )
