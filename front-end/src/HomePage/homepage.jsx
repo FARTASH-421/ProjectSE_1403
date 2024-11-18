@@ -1,29 +1,13 @@
-import LoginPage from '../Login-SignUp Page/loginSignup'
-import './homepage.css'
-
-function App() {
-
+import React from 'react'
+import Navbar from './Navbar'
+export default function HomePage() {
+    const [user, setUser] = useState(null);
 
   return (
-        <div className="HomePage">
-            <nav className="navbar">
-                <li>
-                    <ul>book</ul>
-                    <ul>book</ul>
-                    <ul>book</ul>
-                    <ul>book</ul>
-                    <ul>book</ul>
-                    <a href='../test.jsx'> login</a>
-                </li>
-            </nav>
-            <main>
-                <p>this is for main</p>
-            </main>
-            <footer>
-                this is for footer
-            </footer>
-        </div>
+    <div>
+        <Navbar user={user}/>
+        {/* <a href='./login'>Log in</a> */}
+
+    </div>
   )
 }
-
-export default App

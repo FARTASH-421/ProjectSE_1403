@@ -5,8 +5,7 @@
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
 }
 
-body #container {
-	background-image: url(../assets/haspital.jpg);
+.LoginBody {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -228,21 +227,6 @@ input {
 	width: 40px;
 }
 
-footer {
-    background-color: #222;
-    color: #fff;
-    font-size: 14px;
-    bottom: 0;
-    position: fixed;
-    left: 0;
-    right: 0;
-    text-align: center;
-    z-index: 999;
-}
-
-footer p {
-    margin: 10px 0;
-}
 
 
 .creat-account{
