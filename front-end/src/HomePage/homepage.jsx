@@ -1,13 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Navbar from './Navbar'
 import SearchBar from "./SearchBar"
-export default function HomePage({user}) {
 
-    
+export default function HomePage({user}) {
+  
+  
 
   return (
     <div>
-        <Navbar user={user}/>
+        <Navbar/>
         <SearchBar/>
 
     </div>

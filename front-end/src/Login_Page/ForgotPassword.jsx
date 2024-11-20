@@ -36,7 +36,7 @@ const ForgotPassword = () => {
                         />
                         <button type="submit">ارسال لینک بازیابی</button>
                     </form>
-                    {message && <p className="message">{message}</p>}
+                {message && <p className="message">{message}</p>}
                 {error && <p className="error">{error}</p>}
             </div>
         </div>

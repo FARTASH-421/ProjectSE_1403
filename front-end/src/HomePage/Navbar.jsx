@@ -1,23 +1,32 @@
-import React from 'react';
+import React, {useState} from 'react';
+
+import { GoHome } from "react-icons/go";
+
+
 import './Navbar.css';
 
-const Navbar = ({user}) => {
-    
+const Navbar = () => {
+
+     const [user, setUser] = useState(""); 
+
     return (
         <nav className="navbar">
-            <div className="navbar-left">
-                
-                {user ? <span className="username">{user}</span> : 
-                        <a href="./login" className="login-button">ورود | ثبت نام</a>}
-                
-            </div>
             <ul className="nav-links">
-            {user}
-                <li className="nav-itme"><a href="#about">About</a></li>
-                <li className="nav-itme"><a href="#contact">Contact</a></li>
-                <li className="nav-itme"><a href="#services">Services</a></li>
-                <li className="nav-itme"><a href="#home">خانه</a></li>
+                <li className="nav-itme"><a href="/home"><GoHome /> خانه</a></li>
+                <li className="nav-itme"><a href="#services">خدمات</a></li>
+                <li className="nav-itme"><a href="#contact">ارتباط</a></li>
+                <li className="nav-itme"><a href="#about">درباره</a></li>
             </ul>
+
+            <div className="navbar-left">
+                {console.log("hello -> "+ user)}
+                {user ? <span className="username">{user}</span> :
+                            
+                            <a href="./login" className="login-button">ورود | ثبت نام</a>
+                        
+                }
+            </div>
+            
         </nav>
     );
 };

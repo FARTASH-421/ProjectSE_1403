@@ -1,13 +1,11 @@
 import { useState } from 'react';
-import {useNavigate} from "react-router-dom";
 import './loginSignUp.css';
 
-const LoginPage = ({setUser}) => {
+const LoginPage = () => {
 
     const [isSignUp, setIsSignUp] = useState(false);
     const [error, setError] = useState('');
     const [message, setMessage] = useState('');
-    const navigate = useNavigate();
 
     const [signUpData, setSignUpData] = useState({
         name: "",
@@ -71,7 +69,8 @@ const LoginPage = ({setUser}) => {
             const password = "12345";
            
             if(loginData.email === userName && loginData.password === password){
-                setUser(loginData.username);
+                // setUser(loginData.username);
+                
                 window.location.href = '/home';
                 // navigate('./home')
             }else {

@@ -35,7 +35,7 @@
 }
 
 .nav-links li a:hover {
-    color: #00bcd4;
+    color: #ffffff;
 }
 
 .login-button {
@@ -53,4 +53,17 @@
 
 .login-button:hover {
     background-color: #0199a1;
+    box-shadow: 1px 1px ;
+}
+.error{
+    color: red;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.nav-itme:hover{
+   
+    background-color:#0199a1;
+    border-radius: 10px;
+    text-align: center;
 }
