@@ -6,6 +6,7 @@
     padding: 0px 15px;
     background-color:#1a3164fd;
     color: #fff;
+    height: 60px;
     box-shadow: 0px 10px 5px rgb(43, 120, 214);
 }
 
@@ -61,9 +62,45 @@
     font-weight: bold;
 }
 
-.nav-itme:hover{
-   
-    background-color:#0199a1;
-    border-radius: 10px;
+.nav-item:hover{
+    box-shadow: 0px 3px red;
     text-align: center;
+    
+}
+
+.username-container {
+    cursor: pointer;
+    margin-left: 100px;  
+}
+.dropdown-navbar {
+    position: fixed;
+    margin-top: 5px;       
+ 
+    background-color:#3357a4a0;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    /* border: 2px solid red ; */
+}
+
+.dropdown-navbar a {
+    display: block;
+    text-decoration: none;
+    color: black;
+    transition: background-color 0.3s;
+    font-size: 25px;
+    border-radius: 5px;
+    width: 150px;
+    text-align: center;
+    
+
+}
+
+.dropdown-navbar a:hover {
+    background-color: #f0f0f0; /* Highlight on hover */
+    /* font-size: 25px; */
 }
