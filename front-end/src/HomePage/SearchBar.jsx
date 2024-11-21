@@ -61,7 +61,7 @@ export default function SearchBar() {
 
     <div className='dropdown'>
          <h1>helllo</h1>
-            {datas.map((item) => <p>{item.full_name}</p>)}
+            {/* {datas.map((item) => <p>{item.full_name}</p>)} */}
         </div>
     </div>
   )

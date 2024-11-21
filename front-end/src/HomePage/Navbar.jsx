@@ -1,14 +1,12 @@
 import React, {useState} from 'react';
-
 import { GoHome } from "react-icons/go";
-
-
 import './Navbar.css';
 
 const Navbar = () => {
-
-     const [user, setUser] = useState(""); 
-
+   
+    const user = localStorage.getItem('user');
+    const strCh = localStorage.getItem('login');
+    let checkLogin = JSON.parse(strCh);
     return (
         <nav className="navbar">
             <ul className="nav-links">
@@ -18,12 +16,9 @@ const Navbar = () => {
                 <li className="nav-itme"><a href="#about">درباره</a></li>
             </ul>
 
-            <div className="navbar-left">
-                {console.log("hello -> "+ user)}
-                {user ? <span className="username">{user}</span> :
-                            
-                            <a href="./login" className="login-button">ورود | ثبت نام</a>
-                        
+            <div className="navbar-left">            
+               { checkLogin? <a href='./logout' className="login-button"><span>{user}</span></a> :
+                <a href="./login" className="login-button"> <span>ورود | ثبت نام</span></a>
                 }
             </div>
             

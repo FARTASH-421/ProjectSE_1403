@@ -1,12 +1,16 @@
 import { useState } from 'react';
+import { useNavigate } from "react-router-dom";
 import './loginSignUp.css';
 
 const LoginPage = () => {
 
+
     const [isSignUp, setIsSignUp] = useState(false);
     const [error, setError] = useState('');
     const [message, setMessage] = useState('');
+    const navigate = useNavigate();
 
+  
     const [signUpData, setSignUpData] = useState({
         name: "",
         userNumber: "",
@@ -30,7 +34,13 @@ const LoginPage = () => {
 
     const handleSignUpChange = (e) => {
         const { name, value } = e.target;
-        setSignUpData(prevData => ({ ...prevData, [name]: value }));
+        if(value.legt> 10){
+            setError('نام کاربر یا گذرواژه اشتباه است');
+            
+        }else{
+
+            setSignUpData(prevData => ({ ...prevData, [name]: value }));
+        }
     };
 
     const handleLoginChange = (e) => {
@@ -41,42 +51,57 @@ const LoginPage = () => {
 
     const handleSignUpSubmit = async (e) => {
         e.preventDefault();
-        try {
-            const response = await fetch('https://your-backend-api.com/signup', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(signUpData),
-            });
 
-            const data = await response.json();
-            if (response.ok) {
-                setMessage('Sign up successful!');
-            } else {
-                setMessage(`Error: ${data.message}`);
-            }
-        } catch (error) {
-            setMessage('Network error, please try again later.');
-        }
+        localStorage.setItem('dataUser', JSON.stringify(signUpData));
+        localStorage.setItem('user', signUpData.name);
+        localStorage.setItem('login', true);
+        navigate('/home');
+        
+
+
+        // try {
+        //     const response = await fetch('https://your-backend-api.com/signup', {
+        //         method: 'POST',
+        //         headers: {
+        //             'Content-Type': 'application/json',
+        //         },
+        //         body: JSON.stringify(signUpData),
+        //     });
+
+        //     const data = await response.json();
+        //     if (response.ok) {
+        //         setMessage('Sign up successful!');
+        //     } else {
+        //         setMessage(`Error: ${data.message}`);
+        //     }
+        // } catch (error) {
+        //     setMessage('Network error, please try again later.');
+        // }
     };
+
+
 
     const handleLoginSubmit = (e) => {
         e.preventDefault();
        
 
-            const userName = "admin";
-            const password = "12345";
+            // const userName = "admin";
+            // const password = "12345";
+            const userName = loginData.email;
+            localStorage.setItem('user', userName);
+            localStorage.setItem('login', true);
            
-            if(loginData.email === userName && loginData.password === password){
-                // setUser(loginData.username);
+            // if(loginData.email === userName && loginData.password === password){
+              
                 
-                window.location.href = '/home';
-                // navigate('./home')
-            }else {
-                setError('نام کاربر یا گذرواژه اشتباه است');
+                navigate('/home');
+                   
+               
+
+            // }else {
+            //     setError('نام کاربر یا گذرواژه اشتباه است');
             
-            }
+            // }
  // try {
 
             // const response = await fetch('https://your-backend-api.com/login', {
