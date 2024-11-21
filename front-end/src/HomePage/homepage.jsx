@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Navbar from './Navbar'
 import SearchBar from "./SearchBar"
+import Footer from "./Footer"
 
 export default function HomePage() {
 
@@ -8,6 +9,7 @@ export default function HomePage() {
     <div>
         <Navbar/>
         <SearchBar/>
+        <Footer/>
 
     </div>
   )
