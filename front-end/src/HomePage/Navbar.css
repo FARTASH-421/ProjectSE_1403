@@ -63,7 +63,7 @@
 }
 
 .nav-item:hover{
-    box-shadow: 0px 3px red;
+    box-shadow: 0px 2px red;
     text-align: center;
     
 }
@@ -80,7 +80,7 @@
     width: 200px;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content:space-evenly;
     align-items: center;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
@@ -92,15 +92,14 @@
     text-decoration: none;
     color: black;
     transition: background-color 0.3s;
-    font-size: 25px;
+    font-size: 20px;
     border-radius: 5px;
-    width: 150px;
-    text-align: center;
-    
+    width: 170px;
+    text-align: center; 
 
 }
 
 .dropdown-navbar a:hover {
     background-color: #f0f0f0; /* Highlight on hover */
-    /* font-size: 25px; */
+    /* height: 30px; */
 }
