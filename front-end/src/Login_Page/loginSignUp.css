@@ -1,7 +1,6 @@
 
 * {
 	box-sizing: border-box;
-    
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
 }
 
@@ -11,20 +10,21 @@
 	align-items: center;
 	flex-direction: column;
 	font-family: 'Montserrat', sans-serif;
+	direction: ltr;
 	height: 100vh;
 	margin: -20px 0 50px;
 }
 
-h1 {
+.LoginBody h1 {
 	font-weight: bold;
 	margin: 0;
 }
 
-h2 {
+.LoginBody h2 {
 	text-align: center;
 }
 
-p {
+.LoginBody p {
 	font-size: 14px;
 	font-weight: 100;
 	line-height: 20px;
@@ -32,7 +32,7 @@ p {
 	margin: 20px 0 30px;
 }
 
-span {
+.LoginBody span {
 	font-size: 12px;
 }
 
@@ -43,7 +43,7 @@ a {
 	margin: 15px 0;
 }
 
-button {
+.LoginBody button {
 	border-radius: 20px;
 	border: 2px solid #151515;
 	background-color: #235fce;
@@ -57,20 +57,20 @@ button {
 	transition: transform 80ms ease-in;
 }
 
-button:active {
+.LoginBody button:active {
 	transform: scale(0.95);
 }
 
-button:focus {
+.LoginBody button:focus {
 	outline: none;
 }
 
-button.ghost {
+.LoginBody button.ghost {
 	background-color: transparent;
 	border-color: #FFFFFF;
 }
 
-form {
+.LoginBody form {
 	background-color: #FFFFFF;
 	display: flex;
 	align-items: center;
@@ -81,7 +81,7 @@ form {
 	text-align: center;
 }
 
-input {
+.LoginBody input {
 	background-color: #eee;
 	border: none;
 	padding: 12px 15px;
@@ -201,6 +201,7 @@ input {
 
 .container.right-panel-active .overlay-left {
 	transform: translateX(0);
+	/* font-size: 40px; */
 }
 
 .overlay-right {
@@ -231,7 +232,10 @@ input {
 
 .creat-account{
     padding: 40px 0;
- 
+	/* display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center; */
 }
 
 .inp{
@@ -239,6 +243,7 @@ input {
     height: 50px;
     font-size: 20px;
     direction: rtl;
+	padding: 0px;
   
 }
 
@@ -247,3 +252,34 @@ input {
     
 }
 
+.overlay-left .textInput{
+    text-align: center;
+	/* font-family:; */
+    font-size: 20px;
+	color: rgb(26, 255, 0);
+	margin: 70px;
+	/* height:; */
+}
+
+.overlay-right .textSingup{
+	text-align: center;
+	margin: 70px;
+	color: rgb(251, 255, 0);
+	font-size: 20px;
+}
+
+.inp + .error {
+    display: block;
+    margin-top: 1px;
+}
+
+.inp:focus + .error {
+    padding-left: 1px;
+    transition: all 0.3s ease;
+}
+
+.error {
+    color: red;
+    font-size: 15px;
+	font-weight: bold;
+}

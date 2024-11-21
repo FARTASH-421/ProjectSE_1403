@@ -1,14 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Navbar from './Navbar'
+import SearchBar from "./SearchBar"
+import Footer from "./Footer"
 
-export default function HomePage({user}) {
-
-    
+export default function HomePage() {
 
   return (
     <div>
-        <Navbar user={user}/>
-        {/* <a href='./login'>Log in</a> */}
+        <Navbar/>
+        <SearchBar/>
+        <Footer/>
 
     </div>
   )
