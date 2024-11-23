@@ -1,7 +1,11 @@
 from django.urls import path
-from . import views
+from .views import get_todos, CustomTokenObtainPairView, CustomTokenRefreshView, logout, register, is_logged_in
 
 urlpatterns = [
-    path('', views.home, name= 'home' ),
-    path('room/<str:pk>/', views.room, name= 'room'),
+    path('login/', CustomTokenObtainPairView.as_view(), name='token_obtain_pair'),
+    path('logout/', logout),
+    path('token/refresh/', CustomTokenRefreshView.as_view(), name='token_refresh'),
+    path('todos/', get_todos),
+    path('register/', register),
+    path('authenticated/', is_logged_in),
 ]

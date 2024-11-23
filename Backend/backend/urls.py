@@ -1,8 +1,8 @@
 """
-URL configuration for djangoapp project.
+URL configuration for backend project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/5.1/topics/http/urls/
+    https://docs.djangoproject.com/en/5.0/topics/http/urls/
 Examples:
 Function views
     1. Add an import:  from my_app import views
@@ -16,13 +16,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from django.http import HttpResponse
-from django.views.generic import TemplateView
-def home(request):
-    return HttpResponse('Home page')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # path('',TemplateView.as_view(template_name='index.html')),
-    path('', include('base.urls')),
+    path('api/', include('base.urls')),
 ]

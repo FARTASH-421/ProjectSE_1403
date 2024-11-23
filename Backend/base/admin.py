@@ -1,7 +1,5 @@
 from django.contrib import admin
+from .models import Todo
 
 # Register your models here.
-from .models import Room, Message, Topic
-admin.site.register(Room)
-admin.site.register(Message)
-admin.site.register(Topic)
+admin.site.register(Todo)
