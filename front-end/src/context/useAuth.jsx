@@ -24,8 +24,10 @@ export const AuthProvider = ({children}) => {
 
     const loginUser = async (username, password) => {
         const user = await login(username, password)
-        if (user) {
+        if (user.success) {
           setUser(user);
+          console.log("login -> ");
+          console.log(user);
           return 1;
           // nav('/')
         } else {

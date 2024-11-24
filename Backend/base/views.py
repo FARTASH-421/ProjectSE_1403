@@ -27,6 +27,7 @@ class CustomTokenObtainPairView(TokenObtainPairView):
             response = super().post(request, *args, **kwargs)
             tokens = response.data
 
+            print(tokens , '<<---')
             access_token = tokens['access']
             refresh_token = tokens['refresh']
 
@@ -57,7 +58,7 @@ class CustomTokenObtainPairView(TokenObtainPairView):
             return res
         
         except Exception as e:
-            print(e)
+            print(e, '<-- is -> \n')
             return Response({'success':False})
         
 class CustomTokenRefreshView(TokenRefreshView):
@@ -105,7 +106,7 @@ def logout(request):
         return res
 
     except Exception as e:
-        print(e)
+        print('this -> ',e)
         return Response({'success':False})
 
 @api_view(['GET'])

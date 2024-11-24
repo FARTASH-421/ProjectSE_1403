@@ -127,7 +127,7 @@ const LoginPage = () => {
         }
 
         
-        await registerUser(signUpData.name, signUpData.email, signUpData.password, signUpData.password);
+        await registerUser(signUpData.email, signUpData.email, signUpData.password, signUpData.password);
         
         localStorage.setItem('dataUser', JSON.stringify(signUpData));
         localStorage.setItem('user', signUpData.name);
@@ -144,7 +144,7 @@ const LoginPage = () => {
         }
 
         // await registerUser(loginData.name, signUpData.email, signUpData.password, signUpData.password);
-       const check = await loginUser(loginData.name, loginData.password);
+       const check = await loginUser(loginData.email, loginData.password);
         // const userName = "aq.fartash.421@gmail.com";
         if(check === 1){
             alert(check);
