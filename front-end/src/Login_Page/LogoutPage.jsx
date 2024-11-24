@@ -16,8 +16,9 @@ export default function LogoutPage() {
   return (
     <>
        <div className='logout-conter'>
+        <div className='logout-d'>
           <div className='text-show-logout'>
-            <h2>می خواهید از برنامه خارجی شوید؟</h2>
+            <h2>آیا می خواهید از برنامه خارجی شوید؟</h2>
           </div>
           <div className='button-logout'>
             <div className='logout-bu'>
@@ -26,6 +27,7 @@ export default function LogoutPage() {
             <div className='logout-bu'>
               <button onClick={handleBack}>خیر</button>
             </div>
+          </div>
           </div>
        </div>
         
