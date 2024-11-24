@@ -18,9 +18,9 @@ const Navbar = () => {
 
     const handleLogout = () => {
         
-        localStorage.removeItem('user');
-        localStorage.removeItem('login');
-        window.location.href = './home'; // Redirect to login page
+        // localStorage.removeItem('user');
+        // localStorage.removeItem('login');
+        window.location.href = './logout'; // Redirect to login page
     };
 
     return (

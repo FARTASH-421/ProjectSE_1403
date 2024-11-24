@@ -1,9 +1,42 @@
-.logout{
-    width: 100px;
-    height: 60px;
-    margin: 20px;
+.logout-conter{
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: aliceblue;
+    padding: 0px;
+    margin: 300px;
     font-size: 20px;
     border-radius: 10px;
+    /* width: 500px; */
     text-align: center;
+    color: red;
+    
     border: 2px solid red;
+}
+
+.button-logout{
+    display: flex;
+    flex-direction: row;
+    justify-items: center;
+    align-items: center;
+    
+}
+
+.logout-bu{
+    padding: 30px;
+    /* margin: 10px; */
+    
+}
+
+.logout-bu button{
+    padding: 20px;
+    width:150px;
+    font-size: 20px;
+    border-radius: 10px;
+}
+
+.logout-bu button:hover{
+    background-color: rgba(22, 96, 214, 0.7);
 }
