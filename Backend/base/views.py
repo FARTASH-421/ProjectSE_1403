@@ -20,7 +20,11 @@ def register(request):
         serializer.save()
         return Response(serializer.data)
 <<<<<<< HEAD
+<<<<<<< HEAD
     return Response(serializer.errors)
+=======
+    return Response(serializer.error)
+>>>>>>> eb7bff0 (async with front end with backend)
 =======
     return Response(serializer.error)
 >>>>>>> eb7bff0 (async with front end with backend)
