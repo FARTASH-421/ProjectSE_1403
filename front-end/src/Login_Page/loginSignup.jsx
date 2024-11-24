@@ -9,11 +9,14 @@ const LoginPage = () => {
 
     const [isSignUp, setIsSignUp] = useState(false);
     const navigate = useNavigate();
-
     const { registerUser } = useAuth();
     const { loginUser } = useAuth();
 
-
+    const [loginData, setLoginData] = useState({
+        email: "",
+        password: ""
+    });
+    
     const [signUpData, setSignUpData] = useState({
         name: "",
         userNumber: "",
@@ -21,6 +24,7 @@ const LoginPage = () => {
         password: "",
     });
 
+    // check for errors all feild
     const [error, setError] = useState('');
 
     const [errors, setErrors] = useState({
@@ -30,23 +34,37 @@ const LoginPage = () => {
         password: '',
     });
 
-    const [loginData, setLoginData] = useState({
-        email: "",
-        password: ""
-    });
-
     const [loginErrors, setLoginErrors] = useState({
         email: '',
         password: ''
     });
+
 
     const handleSignUp = () => {
         setLoginErrors({ email: '',password: ''});
         setLoginData.email ="";
         setLoginData.password="";
         console.log("handel SIngup");
-        
+        setError('');
         setIsSignUp(true);
+        setErrors({
+            name: '',
+            userNumber: '',
+            email: '',
+            password: '',
+        });
+
+        setSignUpData({
+            name:'',
+            userNumber: '',
+            email: '',
+            password: '',
+        });
+
+        setLoginData({
+            email: '',
+            password: ''
+        });
     };
 
     const handleSignIn = () => {
@@ -58,11 +76,18 @@ const LoginPage = () => {
         });
 
         setSignUpData({
-            name: '',
+            name:'',
             userNumber: '',
             email: '',
             password: '',
         });
+
+        setLoginData({
+            email: '',
+            password: ''
+        });
+
+        setError('');
         setIsSignUp(false);
     };
 
@@ -122,17 +147,18 @@ const LoginPage = () => {
     const handleSignUpSubmit = async(e) => {
         e.preventDefault();
         if (Object.values(errors).some(error => error)) {
-            // setErrors('نادرست است');
             return; // Prevent submission if there are errors
         }
 
         
-        await registerUser(signUpData.email, signUpData.email, signUpData.password, signUpData.password);
-        
-        localStorage.setItem('dataUser', JSON.stringify(signUpData));
-        localStorage.setItem('user', signUpData.name);
-        localStorage.setItem('login', true);
-        setIsSignUp(false);
+        const check = await registerUser(signUpData.email, signUpData.email , signUpData.password, signUpData.password);
+        if(check === 1){
+
+            localStorage.setItem('dataUser', JSON.stringify(signUpData));
+            localStorage.setItem('user', signUpData.name);
+            localStorage.setItem('login', true);
+            setIsSignUp(false);
+        }
 
       
     };
@@ -143,11 +169,9 @@ const LoginPage = () => {
             return; // Prevent submission if there are errors
         }
 
-        // await registerUser(loginData.name, signUpData.email, signUpData.password, signUpData.password);
-       const check = await loginUser(loginData.email, loginData.password);
-        // const userName = "aq.fartash.421@gmail.com";
+        const check = await loginUser(loginData.email, loginData.password);
         if(check === 1){
-            alert(check);
+            alert('Login Sccessfully!');
             setError('');
             localStorage.setItem('user', loginData.email);
             localStorage.setItem('login', true);

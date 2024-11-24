@@ -1,0 +1,10 @@
+*{
+    border: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    box-shadow: 0;
+}
+
+.HomePage{
+    background-color: bisque;
+}

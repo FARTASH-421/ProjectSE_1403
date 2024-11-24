@@ -26,12 +26,10 @@ export const AuthProvider = ({children}) => {
         const user = await login(username, password)
         if (user.success) {
           setUser(user);
-          console.log("login -> ");
-          console.log(user);
           return 1;
           // nav('/')
         } else {
-          alert('Incorrect username or password');
+          // alert('Incorrect username or password');
           return 0;
         }
     }
@@ -44,13 +42,14 @@ export const AuthProvider = ({children}) => {
     const registerUser = async (username, email, password, confirm_password) => {
       try {
         if (password === confirm_password) {
-          alert("I  am In :))) ")
           await register(username, email, password)
           alert('User successfully registered')
-          // nav('/login')
+          return 1;
         }
       } catch {
         alert('error registering user :)))')
+        return 0;
+
       }
     }
 
