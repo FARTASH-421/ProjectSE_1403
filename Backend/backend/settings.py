@@ -27,6 +27,12 @@ SECRET_KEY = 'django-insecure-9)-@hez*pss!^*8n(y82w#drm5%^vbsyr+b$+b03!e7yb5!lg9
 DEBUG = True
 
 ALLOWED_HOSTS = []
+<<<<<<< HEAD
+=======
+#add me
+# CORS_REPLACE_HTTPS_REFERER = True
+# CSRF_TRUSTED_ORIGINS = ["http://localhost:5173", "http://127.0.0.1:5173"]
+>>>>>>> eb7bff0 (async with front end with backend)
 
 
 # Application definition
@@ -39,7 +45,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     #add installations here
+<<<<<<< HEAD
     "corsheaders",
+=======
+    'corsheaders',
+>>>>>>> eb7bff0 (async with front end with backend)
     'rest_framework',
     'rest_framework_simplejwt',
     'rest_framework_simplejwt.token_blacklist',
@@ -55,6 +65,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+<<<<<<< HEAD
 ]
 
 CORS_ALLOWED_ORIGINS = [
@@ -62,6 +73,24 @@ CORS_ALLOWED_ORIGINS = [
 ]
 
 CORS_ALLOW_CREDENTIALS = True
+=======
+   
+]
+
+# CORS_ALLOWED_ORIGINS = [
+#     "http://localhost:3000"
+# ]
+
+# CORS_ALLOW_CREDENTIALS = True
+
+CORS_ALLOW_ALL_ORIGINS = False  # اگر می‌خواهید فقط دامنه‌های مشخصی دسترسی داشته باشند.
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:5173",  # آدرس کلاینت شما
+    "http://127.0.0.1:5173",
+]
+
+CORS_ALLOW_CREDENTIALS = True 
+>>>>>>> eb7bff0 (async with front end with backend)
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (

@@ -19,7 +19,11 @@ def register(request):
     if serializer.is_valid():
         serializer.save()
         return Response(serializer.data)
+<<<<<<< HEAD
     return Response(serializer.errors)
+=======
+    return Response(serializer.error)
+>>>>>>> eb7bff0 (async with front end with backend)
 
 class CustomTokenObtainPairView(TokenObtainPairView):
     def post(self, request, *args, **kwargs):
