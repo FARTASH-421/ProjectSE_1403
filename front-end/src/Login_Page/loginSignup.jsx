@@ -141,7 +141,10 @@ const LoginPage = () => {
             localStorage.setItem('login', true);
             setIsSignUp(false);
         }
-
+    
+    // exmples
+        // user: aaaaaa@gim.com
+        // pass: aaaaaa@gim.com
       
     };
 

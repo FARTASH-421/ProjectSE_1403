@@ -18,3 +18,6 @@ npm install axios
 npm install react-router-dom
 <br>
 npm i @chakra-ui/react @emotion/styled framer-motion
+
+cd/ front-end: 
+    npm i react-toastify
