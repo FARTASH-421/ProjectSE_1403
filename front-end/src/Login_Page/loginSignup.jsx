@@ -41,39 +41,20 @@ const LoginPage = () => {
 
 
     const handleSignUp = () => {
-        setLoginErrors({ email: '',password: ''});
-        setLoginData.email ="";
-        setLoginData.password="";
-        console.log("handel SIngup");
-        setError('');
+        restData();
         setIsSignUp(true);
-        setErrors({
-            name: '',
-            userNumber: '',
-            email: '',
-            password: '',
-        });
-
-        setSignUpData({
-            name:'',
-            userNumber: '',
-            email: '',
-            password: '',
-        });
-
-        setLoginData({
-            email: '',
-            password: ''
-        });
     };
 
-    const handleSignIn = () => {
+    const restData = ()=>{
+        setError('');
+
         setErrors({
             name: '',
             userNumber: '',
             email: '',
             password: '',
         });
+      
 
         setSignUpData({
             name:'',
@@ -82,17 +63,18 @@ const LoginPage = () => {
             password: '',
         });
 
-        setLoginData({
-            email: '',
-            password: ''
-        });
+        setLoginErrors({ email: '',password: ''});
+        setLoginData({ email: '', password: '' });
+        
+    }
 
-        setError('');
+    const handleSignIn = () => {
+        restData();
         setIsSignUp(false);
     };
 
     const handleSignUpChange = (e) => {
-        setError('');
+        // setError('');
         const { name, value } = e.target;
         setSignUpData(prevData => ({ ...prevData, [name]: value }));
 
@@ -189,21 +171,21 @@ const LoginPage = () => {
                         <h1 className="title-login">ایجاد حساب</h1>
                         <div className="creat-account">
                           
-                                <input type="text" name="name" placeholder="نام کاربر" className="inp" onChange={handleSignUpChange} required  />
+                                <input type="text" name="name" placeholder="نام کاربر" className="inp" value={signUpData.name} onChange={handleSignUpChange} required  />
                                 {errors.name && <p className="errorInput">{errors.name}</p>}
                             
                             
                             
-                                <input type="text" name="userNumber" placeholder="شماره تماس" className="inp" onChange={handleSignUpChange} required />
+                                <input type="text" name="userNumber" placeholder="شماره تماس" className="inp" value={signUpData.userNumber} onChange={handleSignUpChange} required />
                                 {errors.userNumber && <p className="errorInput">{errors.userNumber}</p>}
                             
                             
-                                <input type="email" name="email" placeholder="ایمیل" className="inp" onChange={handleSignUpChange}  required/>
+                                <input type="email" name="email" placeholder="ایمیل" className="inp" value={signUpData.email} onChange={handleSignUpChange}  required/>
                                 {errors.email && <p className="errorInput">{errors.email}</p>}   
                             
                             
 
-                                <input type="password" name="password" placeholder="رمز" className="inp" onChange={handleSignUpChange} required />
+                                <input type="password" name="password" placeholder="رمز" className="inp" value={signUpData.password} onChange={handleSignUpChange} required />
                                 {errors.password && <p className="errorInput">{errors.password}</p>}
                         </div>
                         {error && <p className="errorInput" style={{ color: "red", fontWeight: "bold" }}>{error}</p>}
@@ -214,10 +196,10 @@ const LoginPage = () => {
                 <div className="form-container sign-in-container">
                     <form onSubmit={handleLoginSubmit}>
                         <h1 className="title-login">ورود به حساب</h1>
-                        <input type="text" name="email" placeholder="ایمیل*" className="inp" onChange={handleLoginChange} required />
+                        <input type="text" name="email" placeholder="ایمیل*" className="inp" value={loginData.email} onChange={handleLoginChange} required />
                         {loginErrors.email && <p className="errorInput">{loginErrors.email}</p>}
 
-                        <input type="password" name="password" placeholder="رمز*" className="inp" onChange={handleLoginChange} required/>
+                        <input type="password" name="password" placeholder="رمز*" className="inp" value={loginData.password} onChange={handleLoginChange} required/>
                         {loginErrors.password && <p className="errorInput">{loginErrors.password}</p>}
 
                         {error && <p style={{ color: "red", fontWeight: "bold", fontSize:"15px" }}>{error}</p>}

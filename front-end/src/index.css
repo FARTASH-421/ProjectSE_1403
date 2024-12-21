@@ -1,5 +1,11 @@
+@font-face{
+    font-family: 'iran';
+    src: url('./fonts/Iranian\ Sans.ttf') format("ttf");
+}
+
 body{
     padding: 0px;
     margin: 0px;
     background-image: url(./assets/haspital.jpg);
+    font-family: 'iran';
 }
