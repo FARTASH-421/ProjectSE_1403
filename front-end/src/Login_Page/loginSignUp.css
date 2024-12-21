@@ -43,7 +43,7 @@ a {
 	margin: 15px 0;
 }
 
-.LoginBody button {
+.LoginBody .input-submit {
 	border-radius: 20px;
 	border: 2px solid #151515;
 	background-color: #235fce;

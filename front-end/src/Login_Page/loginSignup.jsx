@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
 import { useNavigate } from "react-router-dom";
 import { useAuth } from '../context/useAuth'
 import './loginSignUp.css';
@@ -135,11 +136,20 @@ const LoginPage = () => {
         
         const check = await registerUser(signUpData.email, signUpData.email , signUpData.password, signUpData.password);
         if(check === 1){
-
+            toast.success('Registration was successful !', {position: "top-center"});
             localStorage.setItem('dataUser', JSON.stringify(signUpData));
             localStorage.setItem('user', signUpData.name);
             localStorage.setItem('login', true);
-            setIsSignUp(false);
+
+            setTimeout(() => {
+                setIsSignUp(false);
+            }, 5010);
+          
+        }else{
+            
+            toast.error('This email exists !', {
+             position: "top-center"
+             });
         }
     
     // exmples
@@ -156,13 +166,22 @@ const LoginPage = () => {
 
         const check = await loginUser(loginData.email, loginData.password);
         if(check === 1){
-            alert('Login Sccessfully!');
+            // alert('Login Sccessfully!');
+            toast.success('Login Sccessfully!', {position: "top-center"});
+            
             setError('');
             localStorage.setItem('user', loginData.email);
             localStorage.setItem('login', true);
-            navigate('/home');
+           
+            setTimeout(() => {
+                navigate('/home');
+            }, 5010);
+
         }else{
            setError('ایمیل یا گذرواژه نادرست است');
+           toast.error('Incorrect email or password !', {
+            position: "top-center"
+            });
         }
     };
 
@@ -216,16 +235,17 @@ const LoginPage = () => {
                         <div className="overlay-panel overlay-left">
                             <h1>Hello, Friend!</h1>
                             <b className='textInput'>سلامتی تنها نبودن بیماری نیست، بلکه یک حالت کامل از رفاه جسمی، روحی و اجتماعی است</b>
-                            <button className="ghost" onClick={handleSignIn}>ورود به برنامه</button>
+                            <button className="ghost input-submit" onClick={handleSignIn}>ورود به برنامه</button>
                         </div>
                         <div className="overlay-panel overlay-right">
                             <h1>Welcome Back!</h1>
                             <span className='textSingup'>سلامتی گنجی است که در بدن ما نهفته است، از آن مراقبت کنیم تا همیشه درخشان بماند</span>
-                            <button className="ghost" onClick={handleSignUp}>ایجاد حساب</button>
+                            <button className="ghost input-submit" onClick={handleSignUp}>ایجاد حساب</button>
                         </div>
                     </div>
                 </div>
             </div>
+            <ToastContainer />
         </div>
     );
 };

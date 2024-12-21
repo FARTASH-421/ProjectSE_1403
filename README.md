@@ -21,3 +21,4 @@ npm i @chakra-ui/react @emotion/styled framer-motion
 
 cd/ front-end: 
     npm i react-toastify
+    npm install --save react-toastify

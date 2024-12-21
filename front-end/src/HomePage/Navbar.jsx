@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+// import { ToastContainer, toast } from 'react-toastify';
 import { GoHome } from "react-icons/go";
 import './Navbar.css';
 
@@ -17,10 +18,10 @@ const Navbar = () => {
     };
 
     const handleLogout = () => {
-        
         // localStorage.removeItem('user');
         // localStorage.removeItem('login');
         window.location.href = './logout'; // Redirect to login page
+        
     };
 
     return (
@@ -51,6 +52,7 @@ const Navbar = () => {
                     <a href="./login" className="login-button"> <span>ورود | ثبت نام</span></a>
                 )}
             </div>
+            {/* <ToastContainer /> */}
         </nav>
     );
 };

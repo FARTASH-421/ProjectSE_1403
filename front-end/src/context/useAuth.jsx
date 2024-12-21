@@ -43,11 +43,11 @@ export const AuthProvider = ({children}) => {
       try {
         if (password === confirm_password) {
           await register(username, email, password)
-          alert('User successfully registered')
+          // alert('Registration was successful !')
           return 1;
         }
       } catch {
-        alert('error registering user :)))')
+        // alert('error registering user :)))')
         return 0;
 
       }
